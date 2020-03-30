@@ -735,7 +735,8 @@ public class PhoneWindowManager implements WindowManagerPolicy {
     private static final int MSG_RINGER_TOGGLE_CHORD = 27;
     private static final int MSG_MOVE_DISPLAY_TO_TOP = 28;
     private static final int MSG_DISPATCH_VOLKEY_SKIP_TRACK = 29;
-    private static final int MSG_TOGGLE_TORCH = 50;
+    private static final int MSG_TOGGLE_TORCH = 30;
+    private boolean mOmniSwitchRecents;
 
     private SwipeToScreenshotListener mSwipeToScreenshot;
 
@@ -965,6 +966,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.SCREENSHOT_TYPE), false, this,
+                    UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.OMNI_NAVIGATION_BAR_RECENTS), false, this,
                     UserHandle.USER_ALL);
             updateSettings();
         }
@@ -2548,6 +2552,9 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     UserHandle.USER_CURRENT) != 0;
 
             mDefaultDisplayPolicy.updatehasNavigationBar();
+            mOmniSwitchRecents = Settings.System.getIntForUser(resolver,
+                    Settings.System.OMNI_NAVIGATION_BAR_RECENTS, 0,
+                    UserHandle.USER_CURRENT) == 1;
         }
         if (updateRotation) {
             updateRotation(true);
