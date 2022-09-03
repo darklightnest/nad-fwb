@@ -110,7 +110,7 @@ public class Utils {
      * @hide
      */
     public static void toggleOmniSwitchRecents(Context context, UserHandle user) {
-        final Intent intent = new Intent(ColtUtils.ACTION_TOGGLE_OVERLAY2);
+        final Intent intent = new Intent(Utils.ACTION_TOGGLE_OVERLAY2);
         intent.setPackage(APP_PACKAGE_NAME);
         context.sendBroadcastAsUser(intent, user);
     }
@@ -119,7 +119,7 @@ public class Utils {
      * @hide
      */
     public static void hideOmniSwitchRecents(Context context, UserHandle user) {
-        final Intent intent = new Intent(ColtUtils.ACTION_HIDE_OVERLAY);
+        final Intent intent = new Intent(Utils.ACTION_HIDE_OVERLAY);
         intent.setPackage(APP_PACKAGE_NAME);
         context.sendBroadcastAsUser(intent, user);
     }
@@ -128,7 +128,7 @@ public class Utils {
      * @hide
      */
     public static void preloadOmniSwitchRecents(Context context, UserHandle user) {
-        final Intent intent = new Intent(ColtUtils.ACTION_PRELOAD_TASKS);
+        final Intent intent = new Intent(Utils.ACTION_PRELOAD_TASKS);
         intent.setPackage(APP_PACKAGE_NAME);
         context.sendBroadcastAsUser(intent, user);
     }
