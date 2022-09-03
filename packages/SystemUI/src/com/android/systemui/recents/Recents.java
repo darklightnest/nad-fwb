@@ -77,7 +77,7 @@ public class Recents extends SystemUI implements CommandQueue.Callbacks {
         }
 
         if (isOmniSwitchRecents()) {
-            ColtUtils.toggleOmniSwitchRecents(mContext, UserHandle.CURRENT);
+            Utils.toggleOmniSwitchRecents(mContext, UserHandle.CURRENT);
             return;
         }
 
@@ -93,7 +93,7 @@ public class Recents extends SystemUI implements CommandQueue.Callbacks {
         }
 
         if (isOmniSwitchRecents()) {
-            ColtUtils.hideOmniSwitchRecents(mContext, UserHandle.CURRENT);
+            Utils.hideOmniSwitchRecents(mContext, UserHandle.CURRENT);
             return;
         }
 
@@ -109,7 +109,7 @@ public class Recents extends SystemUI implements CommandQueue.Callbacks {
         }
 
         if (isOmniSwitchRecents()) {
-            ColtUtils.toggleOmniSwitchRecents(mContext, UserHandle.CURRENT);
+            Utils.toggleOmniSwitchRecents(mContext, UserHandle.CURRENT);
             return;
         }
 
@@ -125,7 +125,7 @@ public class Recents extends SystemUI implements CommandQueue.Callbacks {
         }
 
         if (isOmniSwitchRecents()) {
-            ColtUtils.preloadOmniSwitchRecents(mContext, UserHandle.CURRENT);
+            Utils.preloadOmniSwitchRecents(mContext, UserHandle.CURRENT);
             return;
         }
 
